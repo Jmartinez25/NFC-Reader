@@ -81,7 +81,7 @@ fun WelcomeScreen(onStart: () -> Unit) {
 
                 InfoCard()
                 Spacer(Modifier.height(20.dp))
-                
+
                 when (nfcState) {
 
                     NfcState.READY -> {
@@ -114,7 +114,7 @@ fun WelcomeScreen(onStart: () -> Unit) {
                         Surface(
                             modifier = Modifier.fillMaxWidth(),
                             shape    = RoundedCornerShape(10.dp),
-                            color    = colors.tertiary.copy(alpha = 0.08f)
+                            color    = colors.error.copy(alpha = 0.08f)
                         ) {
                             Row(
                                 modifier  = Modifier.padding(12.dp),
@@ -124,7 +124,7 @@ fun WelcomeScreen(onStart: () -> Unit) {
                                 Icon(
                                     painter            = painterResource(R.drawable.nfc_logo),
                                     contentDescription = null,
-                                    tint               = colors.tertiary,
+                                    tint               = colors.error,
                                     modifier           = Modifier.size(20.dp)
                                 )
                                 Text(
