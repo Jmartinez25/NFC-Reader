@@ -335,48 +335,51 @@ fun ErrorContent(error: String, onRetry: () -> Unit, onCancel: () -> Unit) {
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxWidth()
     ) {
-        ScanLottie(dimmed = true)
-        Spacer(Modifier.height(28.dp))
-        NfcBadge(active = false, label = "Error de lectura")
-        Spacer(Modifier.height(14.dp))
-        Text(
-            text = "No se pudo leer",
-            fontSize = 22.sp,
-            fontWeight = FontWeight.Medium,
-            color = colors.onBackground
-        )
-        Spacer(Modifier.height(8.dp))
-        Text(
-            text = error,
-            fontSize = 13.sp,
-            color = colors.onBackground.copy(alpha = 0.5f),
-            textAlign = TextAlign.Center,
-            lineHeight = 20.sp
-        )
-        Spacer(Modifier.height(32.dp))
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.weight(1f),
+            verticalArrangement = Arrangement.Center
+        ) {
+            ScanLottie(dimmed = true)
+            Spacer(Modifier.height(28.dp))
+            NfcBadge(active = false, label = "Error de lectura")
+            Spacer(Modifier.height(14.dp))
+            Text(
+                text       = "No se pudo leer",
+                fontSize   = 22.sp,
+                fontWeight = FontWeight.Medium,
+                color      = colors.onBackground
+            )
+            Spacer(Modifier.height(8.dp))
+            Text(
+                text       = error,
+                fontSize   = 13.sp,
+                color      = colors.onBackground.copy(alpha = 0.5f),
+                textAlign  = TextAlign.Center,
+                lineHeight = 20.sp
+            )
+        }
+
+
         Button(
-            onClick = onRetry,
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(50.dp),
-            shape = RoundedCornerShape(10.dp),
-            colors = ButtonDefaults.buttonColors(
+            onClick  = onRetry,
+            modifier = Modifier.fillMaxWidth().height(50.dp),
+            shape    = RoundedCornerShape(10.dp),
+            colors   = ButtonDefaults.buttonColors(
                 containerColor = colors.primary,
-                contentColor = Color.White
+                contentColor   = Color.White
             )
         ) {
             Text("Intentar de nuevo", fontSize = 14.sp, fontWeight = FontWeight.Medium)
         }
         Spacer(Modifier.height(10.dp))
         Button(
-            onClick = onCancel,
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(50.dp),
-            shape = RoundedCornerShape(10.dp),
-            colors = ButtonDefaults.buttonColors(
+            onClick  = onCancel,
+            modifier = Modifier.fillMaxWidth().height(50.dp),
+            shape    = RoundedCornerShape(10.dp),
+            colors   = ButtonDefaults.buttonColors(
                 containerColor = colors.surfaceVariant,
-                contentColor = colors.onSurface.copy(alpha = 0.7f)
+                contentColor   = colors.onSurface.copy(alpha = 0.7f)
             )
         ) {
             Text("Cancelar", fontSize = 14.sp, fontWeight = FontWeight.Medium)
