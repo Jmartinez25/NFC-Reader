@@ -215,7 +215,7 @@ No se requieren permisos adicionales.
 ```
 MIT License — Solo para uso educativo
 
-Copyright (c) 2025
+Copyright (c) 2026 Martz Labs
 
 Se concede permiso para usar, copiar, modificar y distribuir este software
 únicamente con fines educativos, de investigación o aprendizaje personal.
